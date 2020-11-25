@@ -1,0 +1,98 @@
+
+.add-container{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 2px;
+    background-image: linear-gradient(to right top, #c86bd1, #d96abf, #e36dae, #e9729f, #ea7a92, #f37f88, #fa867e, #fe8e74, #ff9862, #ffa54c, #ffb631, #ffc800);
+  }
+  
+  .add-container > form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+  }
+  
+  .add-button{
+    display: flex;
+    position: relative;
+    margin-right: 7px;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: #F0F0F0;
+    height: auto;
+  }
+  
+  
+  
+  .add-button:focus,
+  .add-button:hover{
+    outline: none;
+    background-color:	#E0E0E0;
+  }
+  
+  .add-input{
+    background-color:white;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid	grey;
+    font-size: 17px;
+    color:  #202020;
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+  
+  }
+  
+  .add-input:focus{
+    outline: none;
+  }
+  
+  .add-input::placeholder{
+    color: #D0D0D0;
+  }
+  
+  .sort-choice{
+    display: flex;
+    margin-right: 3%;
+    margin-left: auto;
+
+   
+  }
+  .sort-choice > select{
+      display: flex;
+      border-radius: 20px;
+      background-color: white;
+      font-size: 15px;
+      font-weight: 550;
+      text-align: center;
+      text-align-last: center;
+      -moz-text-align-last: center;
+      -webkit-appearance: none; 
+      border: none;
+      padding-left: 7px;
+      padding-right: 7px;
+  }
+
+  .sort-choice > select:focus,
+  .sort-choice > select:after{
+    outline: none;
+    border: none;
+  }
+
+  .sort-choice > select > option{
+      border-radius: 20px;
+      border: none;
+      margin: 3px;
+      padding: 7px;
+      font-size: 15px;
+      font-weight: 600;
+  }
+  
+  

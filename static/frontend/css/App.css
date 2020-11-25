@@ -1,0 +1,245 @@
+.contact{
+	font-family: retro-gaming;
+	margin-top: 200px;
+}
+.contact .git-logo{
+	position: relative;
+	right: none;
+}
+
+div.SurfApp {
+	align-self: flex-start;
+  	vertical-align: top;
+  	width: 600px;
+  	height: auto;
+  	background-color: white;
+	padding: 15px;
+	justify-content: center;
+	align-items: center;
+}
+
+div.SurfText{
+	text-align: left;
+	border: 1px solid grey;
+	padding: 4px;
+	margin-top: 5px;
+}
+
+div.app{
+  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  text-align: center;
+  width: auto;
+  gap: 12px;
+  padding: 12px;
+  overflow: hidden;
+  
+}
+
+.Page{
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	display: flex;
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+	background-image: linear-gradient( #87cefa, #ffffff);
+}
+
+nav{
+	font-family: retro-gaming;
+}
+
+div.Chart{
+	width: auto;
+	height: auto;
+}
+
+div.Map{
+	width:auto;
+}
+
+.leaflet-container{
+	width: auto;
+	height: 300px;
+	margin-top: 5px;
+	padding: 4px;
+	border: 1px solid grey;
+	z-index: 0;
+}
+
+.Select.is-open{
+	z-index: 1;
+}
+
+#about-text{
+	font-family: retro-gaming;
+	margin: 5%;
+	text-align: center;
+    max-width: 600px;
+}
+
+
+.git-logo{
+	right: 5px;
+	position: absolute;
+	vertical-align: middle;
+}
+
+.NavLink{
+	display: inline-block;
+	padding-right: 31px;
+}
+
+
+.meal-app{
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	background-color: #b5e7a0;
+	padding: 5px;
+	height: 530px;
+}
+
+
+
+.meal-display{
+	display: inline-flex;
+	background-color: #cff0c1;
+	padding: 5px;
+	height: 100%;
+	min-width: 400px;
+	vertical-align: top;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	justify-content: center;
+
+}
+.meal-display > .btn-group-vertical{
+	width: 100%;
+}
+
+.meal-img{
+	max-width: 300px;
+	height: 300px;
+	border: 3px solid grey;
+	border-radius: 2px;
+	position: relative;
+}
+
+.meal-recipe{
+	text-align: center;
+	max-width: 600px;
+	position: relative;
+}
+
+.meal-recipe > div {
+	margin: 3px;
+	padding: 5px;
+	display: block;
+}
+
+.back{
+	display: flex;
+	width: auto;
+	left: 0;
+	border: none;
+	border-radius: 2px;
+	padding: 10px;
+}
+.back:hover{
+	background-color: #D3D3D3;
+}
+
+.back:focus{
+	outline: none;
+}
+
+
+.btn-light > img{
+	float: right;
+	width: 40px;
+	height: 40px;
+	border: 2px solid grey;
+	margin-left: 3px;
+}
+
+.btn-light{
+	line-height: 3;
+}
+
+.sidebar{
+	align-self: flex-start;
+	text-align: left;
+	overflow: auto;
+	background-color: white;
+	width: 25%; 
+	padding: 15px;
+	border-radius:5px;
+}
+
+.sidebar .git-logo{
+	position: relative;
+	float: right;
+	margin: 20px;
+}
+
+.spinner-border{
+	display: flex;
+	height: 75px;
+	width: 75px;
+	margin: 30px;
+	align-self: center;
+	margin: auto;
+}
+
+@font-face{
+	font-family: retro-gaming;
+	src: url('Retro-Gaming.ttf')  format('truetype');
+}
+
+@media(max-width: 480px){
+	
+	.meal-app{
+		flex-direction: column;
+		height: auto;
+		width: 100%;
+	}
+}
+
+@media(max-width: 1024px){
+
+	.meal-app{
+		width: 100%;
+	}
+	.meal-display{
+		min-width: 0%;
+		width: 100%;
+		text-align: center;
+	}
+
+	div.app{
+		flex-direction: column;
+		height: auto;
+		align-items: center;
+		width: 100%;
+	}
+	div.SurfApp{	
+		width: 100%;
+	}
+	.sidebar{
+		width: auto;
+		height: auto;
+	}
+}
