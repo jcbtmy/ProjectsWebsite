@@ -34,7 +34,7 @@ div.app{
   width: auto;
   gap: 12px;
   padding: 12px;
-  overflow: hidden;
+  overflow-x: hidden;
   
 }
 

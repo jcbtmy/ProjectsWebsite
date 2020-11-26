@@ -185,7 +185,7 @@ export default class ArticlesApp extends React.Component {
           this.updateFolder(data);
          }
          else{
-            this.setState({message: value});
+            this.setState({message: <h2>Oops! Could not resolve: {value}</h2>});
          }
       })
       .catch((error) => {

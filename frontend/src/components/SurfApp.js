@@ -168,13 +168,19 @@ function DisplayGraph(props){
 function SurfText(props){
 	
 		const waves = props.stationWaves;
-		const last_wave_height = waves[waves.length - 1].WVHT;
+		const last_wave_height = (waves === undefined || waves.length == 0 ) ? null : waves[waves.length - 1].WVHT;
 
 		return (
 			
 			<div className="SurfText">
 				<h2><b>{props.stationName}</b></h2>
-				<h2><b>Wave Height: {metersToFeet(last_wave_height).toString()} ft</b></h2>
+				<h2>{last_wave_height && 
+							<b>Wave Height: {metersToFeet(last_wave_height).toString()} ft</b>
+					}
+					{!last_wave_height && 
+						<b style={{color:"red"}}>Oh No! This station is currently down</b>
+					}	
+				</h2>
 				<DisplayTemps temps={props.stationTemps}/>
 				<DisplayGraph stationWaves={waves}/>
 			</div>
@@ -216,7 +222,7 @@ export default class SurfApp extends React.Component{
 
 		const ndbc_select_spec = this.ndbc_cors.concat("data/realtime2/", station_id, ".spec");
 		const res = await fetch(ndbc_select_spec);
-		return (res.status === 200) ? await res.text() : false;
+		return (res.ok) ? await res.text() : false;
 	}
 
 	async getWeatherData(station_id){
@@ -226,7 +232,7 @@ export default class SurfApp extends React.Component{
 		const ndbc_select_spec = this.ndbc_cors.concat("data/realtime2/", station_id, ".txt");
 		const res = await fetch(ndbc_select_spec);
 
-		return (res.status === 200) ? await res.text() : false;
+		return (res.ok) ? await res.text() : false;
 	}
 
 	async getActiveStations(){
@@ -364,11 +370,12 @@ export default class SurfApp extends React.Component{
 				  <Select
 				 	value={selectedStation}
 				 	onChange={this.handleSelectStation}
-				 	options={stations}
+					options={stations}
+					menuPortalTarget={document.body}
+					menuPosition={'fixed'} 
 				 />
 			}
-
-			{ selectedStation	&&
+			{ selectedStation	&&  !notAvailable &&
 
 				<SurfMap
 					currentStation={selectedStation}
@@ -379,7 +386,7 @@ export default class SurfApp extends React.Component{
 			}
 
 
-			{ selectedStation && 
+			{ selectedStation && !notAvailable &&
 				<SurfText 
 					stationName={selectedStation.label}
 					stationWaves={specData}

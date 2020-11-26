@@ -30,6 +30,10 @@ class ArticleViewSet(viewsets.ViewSet):
 
         data = request.data
         check_exists = Article.objects.filter(url=data['url'])
+        site = urlparse(data['url'])
+
+        if not bool(site.scheme):
+            return Response(status=400)
 
         if len(check_exists):
             serialized = ArticleSerializer(check_exists.first(), many=False)
@@ -39,7 +43,7 @@ class ArticleViewSet(viewsets.ViewSet):
             resp = requests.get(data['url'])
             resp.raise_for_status()
         except requests.exceptions.HTTPError as e:
-            return Response(status=400)
+            return Response(status=404)
 
         soup = BeautifulSoup(resp.content, 'html.parser')
         news_title = soup.find('title').get_text()
@@ -61,7 +65,6 @@ class ArticleViewSet(viewsets.ViewSet):
             counts[targets[label]] += 1
 
         best_match = max(counts, key=counts.get)
-        site = urlparse(data['url'])
         
         data['category'] = best_match
         data['site'] = site.netloc
