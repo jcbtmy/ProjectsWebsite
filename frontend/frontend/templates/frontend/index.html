@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'frontend/css/App.css'%}">
+        <link rel="stylesheet" href="{% static 'frontend/css/Clouds.css'%}">
+
+        
+    </head>
+    <body>
+        
+        <div id="page" class="Page">
+    
+        </div>
+        <div id="cloud-container" class="cloud-container">
+
+        </div>
+        
+        {% load static %}
+        <script src="{% static 'frontend/main.js'%}"></script>
+        <script src="{% static 'frontend/clouds.js' %}"></script>
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>
