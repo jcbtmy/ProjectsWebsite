@@ -3,6 +3,7 @@ import Select from 'react-select';
 import {CanvasJSChart} from 'canvasjs-react-charts';
 import { Map, Marker, Popup, TileLayer} from 'react-leaflet';
 import Loading from './Loading';
+import { marker } from 'leaflet';
 
 
 function celciusToFahrenheit(celcius){
@@ -34,13 +35,12 @@ class SurfMap extends React.Component{
 			let marker_coordinates = JSON.stringify([m_latlng.lat, m_latlng.lng]);
 			let stations = this.props.stations;
 
-			for(let i=0; i < stations.length; i++){
 
-				if( marker_coordinates === JSON.stringify(stations[i].coordinates)){
-
-					this.props.clickEvent(stations[i]);
+			stations.filter((station) =>{
+				if(marker_coordinates === JSON.stringify(station.coordinates)){
+					this.props.clickEvent(station);
 				}
-			}
+			});
 	}
 
 	displayMarkers(){
